@@ -43,7 +43,7 @@ namespace Practic1
                     tip.UseFading = true;
                     tip.ToolTipTitle = "Натиснить кнопку!";
                     tip.SetToolTip(this.Controls[i], "Кнопка зникне!");                   
-                    this.Controls.Add(button[i, j]);
+                    //this.Controls.Add(button[i, j]);
                 }
             }          
         }
