@@ -16,9 +16,7 @@ namespace Practic1
         public Form1()
         {
             int w = 15;
-            int h = 10;
-            int _x = 0;
-            int _y = 0;
+            int h = 10;            
             int count = 0;
             var rand = new Random();
             ToolTip tip = new ToolTip();
@@ -26,26 +24,26 @@ namespace Practic1
 
             InitializeComponent();         
             
-            for (int i = 0; i < w; ++i, _x += 50)
+             for (int x = 0; x < w; ++x)
             {               
-                for (int j = 0; j < h; ++j, _y += 50)
+                for (int y = 0; y < h; ++y)
                 {
                     count++;                     
-                    button[i, j] = new Button();
-                    button[i, j].Parent = this;
-                    button[i, j].Size = new Size(50, 50);
-                    button[i, j].Location = new System.Drawing.Point(_y, _x);
-                    button[i, j].Text = String.Format("{0}", count);
-                    button[i, j].BackColor = System.Drawing.Color.FromArgb(rand.Next(255), rand.Next(255), rand.Next(255), rand.Next(255));
-                    button[i, j].Click += new EventHandler(Click_c);
+                    button[x, y] = new Button();
+                    button[x, y].Parent = this;
+                    button[x, y].Size = new Size(50, 50);
+                    button[x, y].Location = new Point(x * button[x, y].Width, y * button[x, y].Height);
+                    button[x, y].Text = String.Format("{0}", count);
+                    button[x, y].BackColor = System.Drawing.Color.FromArgb(rand.Next(255), rand.Next(255), rand.Next(255), rand.Next(255));
+                    button[x, y].Click += new EventHandler(Click_c);
                     tip.IsBalloon = true;
                     tip.ToolTipIcon = ToolTipIcon.Info;
                     tip.UseFading = true;
                     tip.ToolTipTitle = "Натиснить кнопку!";
-                    tip.SetToolTip(this.Controls[i], "Кнопка зникне!");                   
+                    tip.SetToolTip(this.Controls[x], "Кнопка зникне!");                   
                     //this.Controls.Add(button[i, j]);
                 }
-            }          
+            }                 
         }
         private void Click_c(object sender, EventArgs e)
         {
