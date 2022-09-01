@@ -32,7 +32,7 @@ namespace Practic1
                     button[x, y] = new Button();
                     button[x, y].Parent = this;
                     button[x, y].Size = new Size(50, 50);
-                    button[x, y].Location = new Point(x * button[x, y].Width, y * button[x, y].Height);
+                    button[x, y].Location = new Point(y * button[x, y].Height, x * button[x, y].Width);
                     button[x, y].Text = String.Format("{0}", count);
                     button[x, y].BackColor = System.Drawing.Color.FromArgb(rand.Next(255), rand.Next(255), rand.Next(255), rand.Next(255));
                     button[x, y].Click += new EventHandler(Click_c);
